@@ -20,7 +20,7 @@ jobs:
 
     steps:
     - name: Get Tag
-      uses: anothrNick/github-tag-action
+      uses: anothrNick/github-tag-action@1.36.0
       env: 
         DRY_RUN: true
         GITHUB_TOKEN: ${{ github.token }}
@@ -44,7 +44,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
         
     - name: Create GitHub release
-      uses: elgohr/Github-Release-Action
+      uses: elgohr/Github-Release-Action@master
       
     - name: create a tag
-      uses: anothrNick/github-tag-action
+      uses: anothrNick/github-tag-action@1.36.0
