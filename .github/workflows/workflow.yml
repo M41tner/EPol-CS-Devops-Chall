@@ -31,7 +31,7 @@ jobs:
         INITIAL_VERSION: 0.0.0
     
     - name: show tag
-      run: echo "${{steps.getTag.old_tag}}"
+      run: echo "${{steps.getTag.new_tag}}"
     
     - uses: actions/setup-java@v2
       with:
