@@ -30,6 +30,8 @@ jobs:
         GITHUB_TOKEN: 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
         INITIAL_VERSION: 0.0.0
     
+    - name: show tag
+      run: echo "${{steps.getTag.old_tag}}"
     
     - uses: actions/setup-java@v2
       with:
