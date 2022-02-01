@@ -25,6 +25,7 @@ jobs:
         
     - name: Get Tag
       uses: anothrNick/github-tag-action@1.36.0
+      id: getTag
       env: 
         DRY_RUN: true
         GITHUB_TOKEN: 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
