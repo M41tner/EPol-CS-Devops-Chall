@@ -55,3 +55,5 @@ jobs:
         
     - name: create a tag
       uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: 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
