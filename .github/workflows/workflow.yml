@@ -42,7 +42,7 @@ jobs:
     - name: Build package
       run: mvn -B package --file pom.xml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN.CSPackage }}
+        GITHUB_TOKEN: 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
         
     - name: update version
       run: mvn --batch-mode release:update-versions -DdevelopmentVersion=${{ steps.getTag.outputs.new_tag }}
@@ -52,12 +52,12 @@ jobs:
     - name: Publish package
       run: mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN.CSPackage }}
+        GITHUB_TOKEN: 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
         
     - name: Create GitHub release
       uses: elgohr/Github-Release-Action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN.CSPackage }}
+        GITHUB_TOKEN: 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
       with:
         args: ${{ steps.getTag.outputs.new_tag }}
         
