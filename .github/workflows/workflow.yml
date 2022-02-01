@@ -40,7 +40,7 @@ jobs:
         distribution: 'adopt'
         
     - name: Build package
-      run: mvn -B package --file pom.xml:update-versions -DdevelopmentVersion=${{ steps.getTag.outputs.new_tag }}
+      run: mvn -B package --file pom.xml
       env:
         GITHUB_TOKEN: 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
         
