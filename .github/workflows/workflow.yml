@@ -27,7 +27,7 @@ jobs:
       uses: anothrNick/github-tag-action@1.36.0
       env: 
         DRY_RUN: true
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: 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
         INITIAL_VERSION: 0.0.0
     
     
@@ -39,17 +39,17 @@ jobs:
     - name: Build package
       run: mvn -B package --file pom.xml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: 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
         
     - name: Publish package
       run: mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: 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
         
     - name: Create GitHub release
       uses: elgohr/Github-Release-Action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        GITHUB_TOKEN: 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
       with:
         args: MyReleaseMessage
         
