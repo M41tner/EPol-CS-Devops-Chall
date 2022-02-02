@@ -39,8 +39,8 @@ jobs:
     - name: Build and publish package
       run: |
         mvn versions:set -DnewVersion=${{ steps.getTag.outputs.new_tag }} -f pom.xml
-        mvn -B package --file pom.xml   
-        mvn --batch-mode deploy      
+        mvn -B package -f pom.xml   
+        mvn -B deploy      
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
