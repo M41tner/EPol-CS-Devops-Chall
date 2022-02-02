@@ -57,7 +57,7 @@ jobs:
     - name: Create GitHub release
       uses: elgohr/Github-Release-Action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: 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
       with:
         args: ${{ steps.getTag.outputs.new_tag }}
         
