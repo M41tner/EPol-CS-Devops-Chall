@@ -36,13 +36,13 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         
-    - name: Build package
-      run: mvn -B package --file pom.xml
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
     - name: update version
       run: mvn --batch-mode release:update-versions -DdevelopmentVersion=${{ steps.getTag.outputs.new_tag }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+        
+    - name: Build package
+      run: mvn -B package --file pom.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
