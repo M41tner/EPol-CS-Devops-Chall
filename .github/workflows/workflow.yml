@@ -34,12 +34,7 @@ jobs:
     - uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adopt'
-        
-   # - name: update version
-    #  run: mvn --batch-mode release:update-versions -DdevelopmentVersion=${{ steps.getTag.outputs.new_tag }}
-     # env:
-      #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+        distribution: 'adopt' 
         
     - name: Build and publish package
       run: |
@@ -48,12 +43,6 @@ jobs:
         mvn --batch-mode deploy      
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-#    - name: Publish package
- #     run: mvn --batch-mode deploy
- #     mvn -B package --file pom.xml
-  #    env:
-   #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Create GitHub release
       uses: elgohr/Github-Release-Action@master
