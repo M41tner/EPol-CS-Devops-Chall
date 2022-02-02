@@ -43,7 +43,7 @@ jobs:
         
     - name: Build and publish package
       run: |
-        mvn versions:set -DnewVersion=${{ steps.getTag.outputs.new_tag }} pom.xml
+        mvn versions:set -DnewVersion=${{ steps.getTag.outputs.new_tag }} -f pom.xml
         mvn -B package --file pom.xml   
         mvn --batch-mode deploy      
       env:
